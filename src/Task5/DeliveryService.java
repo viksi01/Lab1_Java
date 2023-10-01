@@ -17,6 +17,8 @@ public class DeliveryService {
         orders[0] = new Order(item1, customer1, departurePoint1, receivePoint1, item1.getWeight());
         orders[1] = new Order(item2, customer2, departurePoint2, receivePoint2, item2.getWeight());
 
+
+
         for (Order order : orders) {
             order.createOrder();
             System.out.println();
