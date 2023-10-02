@@ -1,17 +1,15 @@
 package Task5;
 
 public class DeparturePoint {
-    private String adress;
+    private final String departurePoint;
 
-    public DeparturePoint(String adress) {
-        this.adress = adress;
+    public DeparturePoint(String departurePoint) {
+        this.departurePoint = departurePoint;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getDeparturePoint() {
+        return departurePoint;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
+
 }

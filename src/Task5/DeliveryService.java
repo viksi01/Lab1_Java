@@ -2,6 +2,9 @@ package Task5;
 
 public class DeliveryService {
     public static void main(String[] args) {
+
+        OrderArray orderArray = new OrderArray(10);
+
         Customer customer1 = new Customer("Diana");
         Customer customer2 = new Customer("Yana");
         ReceivePoint receivePoint1 = new ReceivePoint("Drohobych");
@@ -11,19 +14,21 @@ public class DeliveryService {
         Item item1 = new Item("Computer", 100);
         Item item2 = new Item("Book", 0.300);
 
-        Order order1 = new Order(item1, customer1, departurePoint1, receivePoint1, item1.getWeight());
-        Order order2 = new Order(item2, customer2, departurePoint2, receivePoint2, item2.getWeight());
-        Order[] orders = new Order [10];
-        orders[0] = new Order(item1, customer1, departurePoint1, receivePoint1, item1.getWeight());
-        orders[1] = new Order(item2, customer2, departurePoint2, receivePoint2, item2.getWeight());
+
+        Order order1 = new Order(orderArray, item1, customer1, departurePoint1, receivePoint1, item1.getWeight());
+        Order order2 = new Order(orderArray, item2, customer2, departurePoint2, receivePoint2, item2.getWeight());
+
+        orderArray.addOrder(order1);
+        orderArray.addOrder(order2);
+
+        //==============================================================================================================
+        orderArray.displayOrders();
+
+        orderArray.removeOrder(0);
 
 
+        orderArray.displayOrders();
 
-        for (Order order : orders) {
-            order.createOrder();
-            System.out.println();
-        }
+
     }
-    //надіюсь що нарешті все закомітиться
-
 }

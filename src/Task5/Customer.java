@@ -1,7 +1,7 @@
 package Task5;
 
 public class Customer {
-    private String name;
+    private final String name;
 
     public Customer(String name) {
 
@@ -12,8 +12,4 @@ public class Customer {
         return name;
     }
 
-    public void setName(String name) {
-
-        this.name = name;
-    }
 }

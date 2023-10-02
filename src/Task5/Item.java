@@ -1,8 +1,8 @@
 package Task5;
 
 public class Item {
-    private String name;
-    private double weight;
+    private final String name;
+    private final double weight;
 
     public Item(String name, double weight) {
         this.name = name;
@@ -13,15 +13,8 @@ public class Item {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
 }

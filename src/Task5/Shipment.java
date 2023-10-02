@@ -2,14 +2,18 @@ package Task5;
 
 public class Shipment {
     private String transport;
-
-    public Shipment(double weight) {
-        setTransport(weight);
+    public Shipment(ReceivePoint receivePoint, double weight) {
+        if (receivePoint.isAllowedReceivePoint()) {
+            setTransport(weight);
+        } else {
+            this.transport = "bicycle";
+        }
     }
 
     public String getTransport() {
         return transport;
     }
+
 
     public void setTransport(double weight) {
         if (weight < 10) {

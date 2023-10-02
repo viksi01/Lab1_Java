@@ -1,31 +1,30 @@
 package Task5;
 
 public class Order {
+    private final OrderArray orderArray;
     private final Item item;
     private final  Customer customer;
     private final DeparturePoint departurePoint;
     private final ReceivePoint receivePoint;
     private final Shipment shipment;
-    public Order(Item item, Customer customer, DeparturePoint departurePoint, ReceivePoint receivePoint, double weight) {
+    public Order(OrderArray orderArray, Item item, Customer customer, DeparturePoint departurePoint, ReceivePoint receivePoint, double weight) {
+        this.orderArray = orderArray;
         this.item = item;
         this.customer = customer;
         this.departurePoint = departurePoint;
         this.receivePoint = receivePoint;
-        this.shipment = new Shipment(weight);
-    }
-
-    public void createOrder() {
-        System.out.println("Order Information:");
-        System.out.println("Customer Name: " + customer.getName());
-        System.out.println("Departure Point: " + departurePoint.getAdress());
-        System.out.println("Receive Point: " + receivePoint.getAdress());
-        System.out.println("Item Name: " + item.getName());
-        System.out.println("Item Weight: " + item.getWeight() + " kg");
-        System.out.println("Shipment Method: " + shipment.getTransport());
+        this.shipment = new Shipment(receivePoint, weight);
     }
 
 
-
-
+    public String printOrder() {
+        return "Order Information:\n" +
+                "Customer Name: " + customer.getName() + "\n" +
+                "Departure Point: " + departurePoint.getDeparturePoint() + "\n" +
+                "Receive Point: " + receivePoint.getReceivePoint() + "\n" +
+                "Item Name: " + item.getName() + "\n" +
+                "Item Weight: " + item.getWeight() + " kg\n" +
+                "Shipment Method: " + shipment.getTransport();
+    }
 
 }
