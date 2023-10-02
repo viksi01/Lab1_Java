@@ -2,6 +2,11 @@ package Task4;
 
 public class Task4 {
     public static void main(String[] args) {
+        int rowFirst = 2;
+        int columnFirst = 3;
+        int rowSecond = 3;
+        int columnSecond = 2;
+
         int[][] firstMatrix = {
                 {5, 1, 7},
                 {4, 2, 9},
@@ -13,16 +18,17 @@ public class Task4 {
                 {1, 12},
         };
 
-        int[][] result = multiplyMatrices(firstMatrix, secondMatrix);
+        int[][] result = multiplyMatrices(firstMatrix, secondMatrix, rowFirst, columnFirst, rowSecond, columnSecond);
+
+        //==================================================================
+
         System.out.println("Multiplied matrices:");
         printMatrix(result);
     }
 
-    private static int[][] multiplyMatrices( int[][] firstMatrix, int[][] secondMatrix) {
-        int rowFirst = firstMatrix.length;
-        int columnFirst = firstMatrix[0].length;
-        int rowSecond = secondMatrix.length;
-        int columnSecond = secondMatrix[0].length;
+    private static int[][] multiplyMatrices( int[][] firstMatrix, int[][] secondMatrix, int rowFirst, int columnFirst,
+                                             int rowSecond, int columnSecond) {
+
         if (columnFirst != rowSecond) {
             System.out.println("These matrices can't be multiplied!");
         }

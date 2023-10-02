@@ -5,6 +5,7 @@ public class OrderArray {
     private int currentIndex = 0;
 
     public OrderArray(int numberOfElements) {
+
         orders = new Order[numberOfElements];
     }
 

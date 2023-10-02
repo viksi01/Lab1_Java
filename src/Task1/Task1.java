@@ -2,7 +2,11 @@ package Task1;
 
 public class Task1 {
     public static void main(String[] args) {
+
         final int result = calculator(6, 2, '/');
+
+        //===========================================================================
+
         System.out.println(result);
     }
 

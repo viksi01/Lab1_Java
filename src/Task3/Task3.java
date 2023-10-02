@@ -3,13 +3,11 @@ package Task3;
 public class Task3 {
     public static void main(String[] args) {
 
-        System.out.println(validateEmail("v[icsi@ukr.net"));
+        System.out.println(validateEmail(".vicsi@lpnu.ua"));
 
     }
 
     private static boolean validateEmail(final String email){
-
-        //String forbiddenSymbols = "!#$%^&*()+=;:[]<> ";
 
         String [] parts = email.split("@");
         String username = parts[0];
@@ -19,7 +17,7 @@ public class Task3 {
             return false;
         }
 
-        if(username.length() == 0 || domain.length() == 0){
+        if(username.isEmpty() || domain.isEmpty()){
             return false;
         }
 

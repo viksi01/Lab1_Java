@@ -16,16 +16,17 @@ public class Shipment {
 
 
     public void setTransport(double weight) {
-        if (weight < 10) {
+        if (weight <= 10.0) {
             this.transport = "bicycle";
-        } else if (weight < 100) {
+        } else if (weight <= 100.0) {
             this.transport = "truck";
-        } else if (weight < 10_000) {
+        } else if (weight <= 10000.0) {
             this.transport = "plane";
-        } else if (weight < 100_000) {
+        } else if (weight <= 100000.0) {
             this.transport = "train";
         } else {
-            System.out.println("Wrong type of weight!");
+            System.out.println("Too heavy item!");
         }
     }
+
 }
